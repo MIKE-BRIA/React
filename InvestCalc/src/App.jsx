@@ -1,7 +1,11 @@
+import UserAdd from "./components/UserAdd";
+
 function App() {
   return (
-    <h1>React Investment Calculator</h1>
-  )
+    <>
+      <UserAdd />
+    </>
+  );
 }
 
-export default App
+export default App;
