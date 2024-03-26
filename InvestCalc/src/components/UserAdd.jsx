@@ -63,5 +63,3 @@ export default function UserAdd() {
     </section>
   );
 }
-
-<div></div>;
