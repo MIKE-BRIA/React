@@ -1,1 +1,166 @@
-[]
+[
+  {
+    "items": [
+      {
+        "id": "m1",
+        "name": "Mac & Cheese",
+        "price": "8.99",
+        "description": "Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.",
+        "image": "images/mac-and-cheese.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m2",
+        "name": "Margherita Pizza",
+        "price": "12.99",
+        "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+        "image": "images/margherita-pizza.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m5",
+        "name": "Veggie Burger",
+        "price": "9.99",
+        "description": "A juicy veggie patty served on a whole grain bun with lettuce, tomato, and a tangy sauce.",
+        "image": "images/veggie-burger.jpg",
+        "quantity": 2
+      },
+      {
+        "id": "m6",
+        "name": "Grilled Chicken Sandwich",
+        "price": "10.99",
+        "description": "Tender grilled chicken breast with avocado, bacon, lettuce, and honey mustard on a toasted bun.",
+        "image": "images/grilled-chicken-sandwich.jpg",
+        "quantity": 2
+      }
+    ],
+    "customer": {
+      "name": "Brian Michael",
+      "email": "brianmichaeladero@gmail.com",
+      "street": "P.O. BOX 634,. NAIROBI 00100. APDK Building,. Lagos Rd.",
+      "postal-code": "00100",
+      "city": "nairobi"
+    },
+    "id": "240.95834653861402"
+  },
+  {
+    "items": [
+      {
+        "id": "m1",
+        "name": "Mac & Cheese",
+        "price": "8.99",
+        "description": "Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.",
+        "image": "images/mac-and-cheese.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m2",
+        "name": "Margherita Pizza",
+        "price": "12.99",
+        "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+        "image": "images/margherita-pizza.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m5",
+        "name": "Veggie Burger",
+        "price": "9.99",
+        "description": "A juicy veggie patty served on a whole grain bun with lettuce, tomato, and a tangy sauce.",
+        "image": "images/veggie-burger.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m6",
+        "name": "Grilled Chicken Sandwich",
+        "price": "10.99",
+        "description": "Tender grilled chicken breast with avocado, bacon, lettuce, and honey mustard on a toasted bun.",
+        "image": "images/grilled-chicken-sandwich.jpg",
+        "quantity": 2
+      },
+      {
+        "id": "m10",
+        "name": "Vegan Buddha Bowl",
+        "price": "11.99",
+        "description": "A hearty bowl filled with quinoa, roasted veggies, avocado, and a tahini dressing.",
+        "image": "images/vegan-buddha-bowl.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m9",
+        "name": "Chicken Curry",
+        "price": "13.99",
+        "description": "Tender pieces of chicken simmered in a rich and aromatic curry sauce, served with basmati rice.",
+        "image": "images/chicken-curry.jpg",
+        "quantity": 2
+      }
+    ],
+    "customer": {
+      "name": "Brian Michael",
+      "email": "brianmichaeladero@gmail.com",
+      "street": "P.O. BOX 634,. NAIROBI 00100. APDK Building,. Lagos Rd.",
+      "postal-code": "00100",
+      "city": "nairobi"
+    },
+    "id": "56.524846299442764"
+  },
+  {
+    "items": [
+      {
+        "id": "m1",
+        "name": "Mac & Cheese",
+        "price": "8.99",
+        "description": "Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.",
+        "image": "images/mac-and-cheese.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m2",
+        "name": "Margherita Pizza",
+        "price": "12.99",
+        "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+        "image": "images/margherita-pizza.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m5",
+        "name": "Veggie Burger",
+        "price": "9.99",
+        "description": "A juicy veggie patty served on a whole grain bun with lettuce, tomato, and a tangy sauce.",
+        "image": "images/veggie-burger.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m6",
+        "name": "Grilled Chicken Sandwich",
+        "price": "10.99",
+        "description": "Tender grilled chicken breast with avocado, bacon, lettuce, and honey mustard on a toasted bun.",
+        "image": "images/grilled-chicken-sandwich.jpg",
+        "quantity": 2
+      },
+      {
+        "id": "m10",
+        "name": "Vegan Buddha Bowl",
+        "price": "11.99",
+        "description": "A hearty bowl filled with quinoa, roasted veggies, avocado, and a tahini dressing.",
+        "image": "images/vegan-buddha-bowl.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m9",
+        "name": "Chicken Curry",
+        "price": "13.99",
+        "description": "Tender pieces of chicken simmered in a rich and aromatic curry sauce, served with basmati rice.",
+        "image": "images/chicken-curry.jpg",
+        "quantity": 2
+      }
+    ],
+    "customer": {
+      "name": "Brian Michael",
+      "email": "brianmichaeladero@gmail.com",
+      "street": "P.O. BOX 634,. NAIROBI 00100. APDK Building,. Lagos Rd.",
+      "postal-code": "00100",
+      "city": "nairobi"
+    },
+    "id": "827.92322400648"
+  }
+]
