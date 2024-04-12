@@ -48,3 +48,12 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+li {
+  text-decoration: none;
+}
+
+main {
+  margin: 2rem auto;
+  text-align: center;
+}
