@@ -8,5 +8,11 @@
       "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "okuku@gmail.com",
+      "password": "$2a$12$VR9YyenJFJ3sq3JcqdvUremQoFNhi/ye0anIT4LO22QkzG.4UoNYq",
+      "id": "73ae03d4-f860-4a3d-aa53-c4a953fb6cda"
+    }
+  ]
 }
