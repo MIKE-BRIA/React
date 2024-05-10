@@ -1,0 +1,15 @@
+import React from "react";
+
+const Home = () => {
+  return (
+    <div className="bg-blue-900 w-screen h-screen flex items-center">
+      <div className="text-center w-full">
+        <button className="bg-white p-2 px-4 text-black rounded-md">
+          Login with Google
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
