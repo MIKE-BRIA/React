@@ -1,3 +1,5 @@
+import clientPromise from "@/lib/mongodb";
+import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import NextAuth from "next-auth";
 // import AppleProvider from 'next-auth/providers/apple'
 // import FacebookProvider from 'next-auth/providers/facebook'
@@ -25,4 +27,5 @@ export default NextAuth({
     //   from: "NextAuth.js <no-reply@example.com>",
     // }),
   ],
+  adapter: MongoDBAdapter(clientPromise),
 });
