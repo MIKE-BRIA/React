@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-import Image from "next/image";
+import { ReactSortable } from "react-sortablejs";
 import Spinner from "./spinner";
 
 const ProductForm = ({
@@ -10,27 +10,35 @@ const ProductForm = ({
   description: existingDescription,
   price: existingPrice,
   images: existingImages,
+  category: existingCategory,
 }) => {
   const [title, setTitle] = useState(existingTitle || "");
   const [description, setDescription] = useState(existingDescription || "");
+  const [category, setCategory] = useState(existingCategory || "");
   const [price, setPrice] = useState(existingPrice || "");
   const [goToProducts, setGoToProducts] = useState(false);
   const [images, setImages] = useState(existingImages || []);
   const [isUploading, setIsUploading] = useState(false);
+  const [categories, setCategories] = useState([]);
 
   const router = useRouter();
 
-  //   console.log({ _id });
+  useEffect(() => {
+    axios.get("/api/category").then((result) => {
+      setCategories(result.data);
+    });
+  }, []);
 
+  //   console.log({ _id });
+  //*adding data to the database
   async function saveProduct(e) {
     e.preventDefault();
-    const data = { title, description, price, images };
+    const data = { title, description, price, images, category };
     if (_id) {
       //*update product data
       await axios.put("/api/products", { ...data, _id });
     } else {
       //*create new product
-
       await axios.post("/api/products", data);
     }
     setGoToProducts(true);
@@ -51,7 +59,7 @@ const ProductForm = ({
       for (const file of files) {
         data.append("file", file);
       }
-
+      //sending image data to the server
       const res = await axios.post("/api/upload", data);
 
       setImages((oldImages) => {
@@ -59,6 +67,11 @@ const ProductForm = ({
       });
       setIsUploading(false);
     }
+  }
+
+  //*function for sorting images
+  function updateImagesOrder(images) {
+    setImages(images);
   }
 
   return (
@@ -70,14 +83,30 @@ const ProductForm = ({
         value={title}
         onChange={(ev) => setTitle(ev.target.value)}
       />
+      <label htmlFor="">Category</label>
+      <select value={category} onChange={(ev) => setCategory(ev.target.value)}>
+        <option value="">Uncategorized</option>
+        {categories.length > 0 &&
+          categories.map((category) => (
+            <option key={category._id} value={category._id}>
+              {category.name}
+            </option>
+          ))}
+      </select>
       <label htmlFor="">Photos</label>
       <div className="mb-2  flex flex-wrap gap-1">
-        {images &&
-          images.map((link) => (
-            <div className="h-24" key={link}>
-              <img src={link} alt="" className="rounded-lg" />
-            </div>
-          ))}
+        <ReactSortable
+          list={images}
+          setList={updateImagesOrder}
+          className="flex flex-wrap gap-1"
+        >
+          {images &&
+            images.map((link) => (
+              <div className="h-24" key={link}>
+                <img src={link} alt="" className="rounded-lg " />
+              </div>
+            ))}
+        </ReactSortable>
         {isUploading && (
           <div className="h-24 p-1 bg-gray-200 flex items-center">
             <Spinner />
