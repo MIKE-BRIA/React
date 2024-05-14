@@ -21,11 +21,12 @@ const Products = () => {
         <thead>
           <tr>
             <td>Product name</td>
+            <td></td>
           </tr>
         </thead>
         <tbody>
           {products.map((product) => (
-            <tr key={product.id}>
+            <tr key={product._id}>
               <td>{product.title}</td>
               <td>
                 <Link href={"/products/edit/" + product._id}>

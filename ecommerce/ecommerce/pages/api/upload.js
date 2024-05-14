@@ -28,10 +28,8 @@ export default async function handle(req, res) {
 
           // Create a write stream to save the file
           const stream = fs.createWriteStream(`public/images/${filename}`);
-
           // Read the file data from the uploaded file
           const bufferedImage = fs.readFileSync(file.path);
-
           // Write the file data to the stream
           stream.write(Buffer.from(bufferedImage), (error) => {
             if (error) {
@@ -41,12 +39,10 @@ export default async function handle(req, res) {
           });
 
           const link = `/images/${filename}`;
-
           // Push the file information to the links array
           links.push(link);
         }
       }
-
       // Send links back to client
       return res.json({ links });
     } catch (error) {
