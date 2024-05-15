@@ -11,8 +11,12 @@ const ProductForm = ({
   price: existingPrice,
   images: existingImages,
   category: existingCategory,
+  properties: existingProperties,
 }) => {
   const [title, setTitle] = useState(existingTitle || "");
+  const [productProperties, setProductProperties] = useState(
+    existingProperties || {}
+  );
   const [description, setDescription] = useState(existingDescription || "");
   const [category, setCategory] = useState(existingCategory || "");
   const [price, setPrice] = useState(existingPrice || "");
@@ -33,7 +37,14 @@ const ProductForm = ({
   //*adding data to the database
   async function saveProduct(e) {
     e.preventDefault();
-    const data = { title, description, price, images, category };
+    const data = {
+      title,
+      description,
+      price,
+      images,
+      category,
+      properties: productProperties,
+    };
     if (_id) {
       //*update product data
       await axios.put("/api/products", { ...data, _id });
@@ -74,6 +85,29 @@ const ProductForm = ({
     setImages(images);
   }
 
+  function setProductProp(propName, value) {
+    setProductProperties((prev) => {
+      const newProductProps = { ...prev };
+      newProductProps[propName] = value;
+      return newProductProps;
+    });
+  }
+
+  const propertiesToFill = [];
+
+  if (categories.length > 0 && category) {
+    let catInfo = categories.find(({ _id }) => _id === category);
+    // console.log(catatInfo);
+    propertiesToFill.push(...catInfo.properties);
+    while (catInfo?.parent?._id) {
+      const parentCat = categories.find(
+        ({ _id }) => _id === catInfo?.parent?._id
+      );
+      propertiesToFill.push(...parentCat.properties);
+      catInfo = parentCat;
+    }
+  }
+
   return (
     <form action="" onSubmit={saveProduct}>
       <label htmlFor="">Product Name</label>
@@ -93,6 +127,21 @@ const ProductForm = ({
             </option>
           ))}
       </select>
+      {propertiesToFill.length > 0 &&
+        propertiesToFill.map((p) => (
+          <div className="flex gap-1">
+            <div>{p.name}</div>
+            <select
+              onChange={(ev) => setProductProp(p.name, ev.target.value)}
+              value={productProperties[p.name]}
+            >
+              {p.values.map((v) => (
+                <option value={v}>{v}</option>
+              ))}
+            </select>
+          </div>
+        ))}
+
       <label htmlFor="">Photos</label>
       <div className="mb-2  flex flex-wrap gap-1">
         <ReactSortable
