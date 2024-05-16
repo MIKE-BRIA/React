@@ -221,13 +221,13 @@ export function Categories({ swal }) {
                   <td>
                     <div className="gap-1 flex">
                       <button
-                        className="btn-primary"
+                        className="btn-default"
                         onClick={() => editCategory(category)}
                       >
                         edit
                       </button>
                       <button
-                        className="btn-primary"
+                        className="btn-red"
                         onClick={() => deleteCategory(category)}
                       >
                         delete
