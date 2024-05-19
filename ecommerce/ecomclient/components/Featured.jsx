@@ -21,7 +21,7 @@ const Desc = styled.p`
 
 const Columnswrapper = styled.div`
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr 0.9fr;
   gap: 40px;
   img {
     max-width: 100%;
@@ -39,20 +39,15 @@ const Column = styled.div`
   align-items: center;
 `;
 
-export default function Featured() {
+export default function Featured({ product }) {
   return (
     <Bg>
       <Center>
         <Columnswrapper>
           <Column>
             <div>
-              <Title>MacBook Pro </Title>
-              <Desc>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias,
-                excepturi recusandae cupiditate ratione facilis minima ab rerum
-                fugit aperiam soluta hic sunt officia, accusamus voluptate ut,
-                adipisci odit ad vel.
-              </Desc>
+              <Title>{product.title} </Title>
+              <Desc>{product.description}</Desc>
               <Buttonwrapper>
                 <Button size="l" outline white>
                   Read more
@@ -73,10 +68,7 @@ export default function Featured() {
           </Column>
 
           <Column>
-            <img
-              src="https://images.unsplash.com/photo-1523688867149-edc3047db358?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fG1hYyUyMGxhcHRvcCUyMHNjcmVlbnxlbnwwfHwwfHx8MA%3D%3D"
-              alt=""
-            />
+            <img src={product.images[0]} alt="" />
           </Column>
         </Columnswrapper>
       </Center>
