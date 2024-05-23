@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply h-screen m-0 p-0 bg-black;
+}
+
+/* body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+} */
+
+main {
+  /* width: 800px; */
+  /* max-width: 800px; */
+  margin: 0 auto;
+  /* padding: 0 20px; */
+}
+
+h1 {
+  @apply text-xl font-bold;
+}
+
+ul {
+  @apply flex;
+}
+
+li {
+  @apply ml-10 text-white;
+}
